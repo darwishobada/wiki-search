@@ -4,6 +4,7 @@ const defaultTheme: ThemeOptions = createTheme({
 	typography: {
 		allVariants: {
 			fontFamily: 'var(--Roboto)',
+			color: '#232F3F',
 		},
 	},
 	palette: {
@@ -42,31 +43,6 @@ const defaultTheme: ThemeOptions = createTheme({
 				elevation: 0,
 			},
 		},
-		MuiButton: {
-			defaultProps: {
-				disableElevation: true,
-				sx: {
-					fontSize: {
-						xl: 20,
-						lg: 20,
-						md: 20,
-						sm: 18,
-						xs: 16,
-					},
-				},
-			},
-			styleOverrides: {
-				root: {
-					paddingLeft: 24,
-					paddingRight: 24,
-					paddingTop: 14,
-					paddingBottom: 14,
-					textTransform: 'none',
-					fontWeight: 'bold',
-					borderRadius: 10,
-				},
-			},
-		},
 		MuiCard: {
 			styleOverrides: {
 				root: {
@@ -88,9 +64,11 @@ const defaultTheme: ThemeOptions = createTheme({
 			},
 			styleOverrides: {
 				root: {
-					backgroundColor: 'transparent',
+					backgroundColor: '#fff',
 					color: '#000',
-					position: 'absolute',
+					position: 'sticky',
+					top: 0,
+					zIndex: 1,
 				},
 			},
 		},

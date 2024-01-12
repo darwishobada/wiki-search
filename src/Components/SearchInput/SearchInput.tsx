@@ -59,11 +59,7 @@ const SearchInput = ({value, setValue, onTextInputChange, options}: SearchInputP
 						startAdornment: (
 							<InputAdornment position="start">
 								<IconButton size="small">
-									<SearchIcon
-										// style={{color: 'hsl(223,10%,58%)'}}
-										height={20}
-										width={20}
-									/>
+									<SearchIcon height={20} width={20} />
 								</IconButton>
 							</InputAdornment>
 						),

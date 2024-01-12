@@ -17,6 +17,25 @@ const SearchList = () => {
 	const text = queryParams.get('text');
 	const {setGlobalContextValue} = useContext(GlobalContext);
 
+	const updateHistory = (text: string) => {
+		setGlobalContextValue((prevState) => {
+			const state = {...prevState};
+			const textIndex = state.history.findIndex((item) => item.label === text);
+			if (textIndex !== -1) {
+				const toBeRelocated = state.history[textIndex];
+				state.history.splice(textIndex, 1);
+				state.history.unshift(toBeRelocated);
+			} else {
+				if (state.history.length === HISTORY_LIMIT) {
+					state.history.pop();
+				}
+				state.history.unshift({label: text!, id: uuidv4()});
+			}
+			localStorage.setItem(LOCAL_STORAGE_KEYS.history, JSON.stringify(state.history));
+			return state;
+		});
+	};
+
 	const fetchData = () => {
 		setIsLoading(true);
 		const queryParams: WikiSearchDto = {
@@ -41,23 +60,7 @@ const SearchList = () => {
 				});
 				setList(mappedResults);
 				delay(() => setIsLoading(false), 200);
-
-				setGlobalContextValue((prevState) => {
-					const state = {...prevState};
-					const textIndex = state.history.findIndex((item) => item.label === text);
-					if (textIndex !== -1) {
-						const toBeRelocated = state.history[textIndex];
-						state.history.splice(textIndex, 1);
-						state.history.unshift(toBeRelocated);
-					} else {
-						if (state.history.length === HISTORY_LIMIT) {
-							state.history.pop();
-						}
-						state.history.unshift({label: text!, id: uuidv4()});
-					}
-					localStorage.setItem(LOCAL_STORAGE_KEYS.history, JSON.stringify(state.history));
-					return state;
-				});
+				updateHistory(text!); // updates history of the last 10 searches
 			})
 			.catch((e) => {
 				setIsLoading(false);

@@ -1,5 +1,5 @@
 import React, {useContext, useEffect, useState} from 'react';
-import {AppBar, Box, Toolbar, Typography, useMediaQuery, useTheme} from '@mui/material';
+import {Box, Toolbar, Typography, useMediaQuery, useTheme} from '@mui/material';
 import {useNavigate, useSearchParams} from 'react-router-dom';
 import SearchInput from '../SearchInput';
 import {ROUTER_PATHS} from '../../constants';
