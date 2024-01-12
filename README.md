@@ -1,3 +1,33 @@
+# Task description 
+
+###  Challenge Overview: Wikipedia API React Application
+####  Core Task
+Implement a search box application in Typescript/React. On submitting a search query, the app
+should call Wikipedia's API.
+#### Example API call
+https://en.wikipedia.org/w/api.php?origin=*&action=opensearch&search=<query>
+#### Data Handling and Rendering
+1. Parse the API response to extract page titles.
+2. Display these titles on the page.
+3. Ensure the titles are clickable links that lead to the corresponding Wikipedia pages.
+#### Search History Tracking
+1. Maintain a history of the last 10 searches.
+2. Display this history in the UI.
+#### Styling and Layout:
+1. Style the application for a better user experience.
+2. Focus on layout, color scheme, and responsive design.
+ #### Performance Optimization
+1. Implement caching strategies or other optimizations to improve performance.
+2. Consider lazy loading, API request optimizations, etc.
+#### Additional Features
+1. Implement pagination or infinite scrolling for search results.
+#### Evaluation Criteria
+1. Code Quality: Readability, use of TypeScript features, and best practices.
+2. Functionality: Correctness and completeness of the required features.
+3. UI/UX Design: Aesthetics and usability of the interface.
+4. Optimization: Efficiency of the code, especially in handling API responses and rendering.
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
