@@ -39,7 +39,7 @@ const Home = () => {
 				alignItems={'center'}
 				flexDirection={'column'}>
 				<Box mb={3}>
-					<Typography variant={'h1'}>Wiki Search</Typography>
+					<Typography variant={'h1'}>Wiki</Typography>
 				</Box>
 				<SearchInput
 					onTextInputChange={handleSearch}

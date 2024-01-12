@@ -41,7 +41,7 @@ const AppBarComponent = ({hideSearch}: {hideSearch: boolean}) => {
 					color={theme.palette.info.contrastText}
 					style={{cursor: 'pointer', marginRight: 40, textAlign: 'center'}}
 					onClick={() => navigate('/')}>
-					Wiki Search
+					Wiki
 				</Typography>
 				{hideSearch && (
 					<Box width={isMobile ? '90%' : '700px'}>
